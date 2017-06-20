@@ -1,0 +1,23 @@
+html, body{
+  height: 100%;
+  width:100%;
+}
+body{
+	background-image:
+	 linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+	url(http://i.imgur.com/Wxm5qhG.jpg);
+	 position:relative;
+	 background-size: cover;
+	 background-position: center center;
+     background-repeat:no-repeat;
+     background-attachment: fixed;
+}
+h1{
+    color:#00004d;
+    text-shadow: 2px 2px #f7f7f7;
+	font-size: 50px;
+    margin:30px 200px;
+}
