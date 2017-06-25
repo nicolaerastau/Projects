@@ -72,6 +72,11 @@ h1{
  -moz-border-radius: 100px;
 }
 p{
+	background-image:
+	 linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    )
   color:#00004d;
   font-size:25px;
   text-shadow: 1px 1px #555;
