@@ -71,3 +71,8 @@ h1{
  -webkit-border-radius: 100px;
  -moz-border-radius: 100px;
 }
+p{
+  color:#00004d;
+    text-shadow: 3px 3px #555;
+}
+ 
