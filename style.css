@@ -1,38 +1,392 @@
-var animateApp = angular.module('animateApp', ['ngRoute', 'ngAnimate']);
+/* BASE STYLES
+============================================================================= */
+html         { overflow-y:hidden; }
+.page        {
+	bottom:0;
+	/*padding-top:150px;*/
+	position:absolute;
+	text-align:center;
+	top:0;
+	width:100%;
+  background-size:cover;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
 
-animateApp.config(function($routeProvider) {
-    $routeProvider
-    	  $routeProvider.when('/', {
-    		templateUrl: 'page-home.html',
-            controller: 'mainController'
-    	})
-    	  $routeProvider.when('/about', {
-    		templateUrl: 'page-about.html',
-            controller: 'aboutController'
-    	})
-    	  $routeProvider.when('/contact', {
-    		templateUrl: 'page-contact.html',
-            controller: 'contactController'
-    	});
-        $routeProvider.when('/projects', {
-    	   	templateUrl: 'page-projects.html',
-               controller: 'projectsController'
-    	  });
-       $routeProvider.otherwise({redirectTo:'/'})
+ h1 	{ font-size:60px;}
+ #title1{
+	 font-size:60px;
+	 text-align:center;
+   color:#045eef;
+ 	 text-shadow: 2px 2px #95b7ed;
+  }
+ #title2{
+	 font-size:60px;
+	 text-align:center;
+	 color:#96070e;
+	 text-shadow:2px 2px #706f6f;
+ }
+ #title3{
+	font-size:60px;
+	text-align:center;
+	color:#96070e;
+	text-shadow:2px 2px #706f6f;
+ }
 
-});
+.navigation-top{
+	  display:inline-block;
+	  background-color:#acb0b7;
+	  width:450px;
+    font-size:8px;
+    padding: 4px 4px;
+    margin-top: 200px;
 
-animateApp.controller('mainController', function($scope) {
-    $scope.pageClass = 'page-home';
-});
+    opacity:0.8;
+    border-radius:15px;
+}
+.sidenav{
+	    margin: 0 auto;
+	    max-width: 980px;
+}
+ul.sidenav li a:hover {
+	display: inline-block;
+    color:		#ff9900;
+    text-decoration: none;
+    text-shadow: 2px 2px #555;
+}
+ul{
+	list-style-type:none;
 
-animateApp.controller('aboutController', function($scope) {
-    $scope.pageClass = 'page-about';
-});
+}
+.active{
+	color:#00004d;
+	font-size: 30px;
+  display: inline-block;
+  margin-left:20px;
 
-animateApp.controller('contactController', function($scope) {
-    $scope.pageClass = 'page-contact';
-});
-animateApp.controller('projectsController', function($scope) {
-     $scope.pageClass = 'page-projects';
- });
+}
+
+ li a{
+    float:left;
+     list-style-type:none;
+}
+a {text-decoration: none}
+
+#name{
+   	text-align:center;
+    color:#f7f7f7;
+   	text-shadow: 3px 3px #555;
+   	font-size: 50px;
+    margin-top:30px;
+   }
+#progress {
+   	text-shadow: 1px 1px #88f8f8;
+    text-align:center;
+   	color:#2503FC;
+   	font-size: 30px;
+   }
+h2 {
+   	text-align:center;
+   	color:#FC0303 !important;
+    text-shadow: 1px 1px #f7f7f7;
+   }
+#phone{
+	font-size: 30px;
+	color:#f4f5f7;
+  font-family: "Arial", sans-serif;
+}
+#portfolio{
+	font-size:40px;
+	text-align:center;
+  color:#ff9900;
+	text-shadow: 1px 1px #f7f7f7;
+}
+#description{
+	background-color:#acb0b7;
+	position: absolute;
+  margin-top:130px;
+	margin-left:20%;
+  margin-right:20%;
+	opacity:0.6;
+	border-radius:15px;
+	box-shadow: 8px 8px 5px #888888;
+}
+
+.blocktext{
+	padding:10px ;
+	text-align: justify;
+  text-justify: inter-word;
+	margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+	color:#4f0348;
+	font-family: "Arial", sans-serif;
+}
+
+
+.photo {
+  display:block;
+  /*position: relative;*/
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 55%;
+	/*cursor: pointer;*/
+}
+
+.photo img {
+  height: auto;
+  width: 100%;
+}
+h3 {
+  font-size: 22px;
+  line-height: 37px;
+}
+h5 {
+  font-size: 15px;
+  line-height: 30px;
+}
+
+
+.facebook {
+  background: #3280e7;
+}
+.facebook:hover {
+  background: #134fa0;
+}
+.twitter {
+  background: #32c8de;
+}
+.twitter:hover {
+  background: #188392;
+}
+.google-plus {
+  background: #f96f4a;
+}
+.google-plus:hover {
+  background: #eb6440;
+}
+.linkedin {
+  background: #729fda;
+}
+.linkedin:hover {
+  background: #3069b6;
+}
+
+/* PAGES
+============================================================================= */
+.page-home 		{
+  background-image :
+  linear-gradient(
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1)
+    ),
+   url("https://i.imgur.com/bceXPCV.jpg")}
+	    /*url("pictures/image1.jpg")*/
+
+.page-about 	{background-image:url("https://i.imgur.com/cqHmCTt.jpg")}
+.page-contact {background-image:url("https://i.imgur.com/ZJj6JoC.jpg")}
+.page-projects {background-image:url("https://i.imgur.com/wrgO3Vi.jpg")}
+/* ANIMATIONS
+============================================================================= */
+
+.page.ng-leave 	{ z-index:9999; }
+.page.ng-enter 	{ z-index:8888; }
+
+/* page specific animations ------------------------ */
+
+/* home -------------------------- */
+.page-home.ng-leave         {
+    -webkit-transform-origin: 0% 0%;
+	-webkit-animation: rotateFall 1s both ease-in;
+	-moz-transform-origin: 0% 0%;
+	-moz-animation: rotateFall 1s both ease-in;
+	transform-origin: 0% 0%;
+	animation: rotateFall 1s both ease-in;
+}
+.page-home.ng-enter 		{
+    -webkit-animation:scaleUp 0.5s both ease-in;
+	-moz-animation:scaleUp 0.5s both ease-in;
+	animation:scaleUp 0.5s both ease-in;
+}
+
+/* about ------------------------ */
+.page-about.ng-leave        {
+    -webkit-animation:slideOutLeft 0.4s both ease-in;
+	-moz-animation:slideOutLeft 0.4s both ease-in;
+	animation:slideOutLeft 0.s both ease-in;
+}
+.page-about.ng-enter 		{
+    -webkit-animation:slideInRight 0.4s both ease-in;
+	-moz-animation:slideInRight 0.4s both ease-in;
+	animation:slideInRight 0.4s both ease-in;
+}
+
+/* contact ---------------------- */
+.page-contact.ng-leave      {
+    -webkit-transform-origin: 50% 50%;
+	-webkit-animation: rotateOutNewspaper .5s both ease-in;
+	-moz-transform-origin: 50% 50%;
+	-moz-animation: rotateOutNewspaper .5s both ease-in;
+	transform-origin: 50% 50%;
+	animation: rotateOutNewspaper .5s both ease-in;
+}
+.page-contact.ng-enter 		{
+    -webkit-animation:slideInUp 0.5s both ease-in;
+	-moz-animation:slideInUp 0.5s both ease-in;
+	animation:slideInUp 0.5s both ease-in;
+}
+/*projects-------------------------*/
+.page-projects.ng-leave      {
+    -webkit-transform-origin: 50% 50%;
+	-webkit-animation: rotateOutNewspaper .5s both ease-in;
+	-moz-transform-origin: 50% 50%;
+	-moz-animation: rotateOutNewspaper .5s both ease-in;
+	transform-origin: 50% 50%;
+	animation: rotateOutNewspaper .5s both ease-in;
+}
+.page-projects.ng-enter 		{
+    -webkit-animation:slideInUp 0.5s both ease-in;
+	-moz-animation:slideInUp 0.5s both ease-in;
+	animation:slideInUp 0.5s both ease-in;
+}
+
+/* rotate and fall */
+@-webkit-keyframes rotateFall {
+	0% { -webkit-transform: rotateZ(0deg); }
+	20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
+	40% { -webkit-transform: rotateZ(17deg); }
+	60% { -webkit-transform: rotateZ(16deg); }
+	100% { -webkit-transform: translateY(100%) rotateZ(17deg); }
+}
+@-moz-keyframes rotateFall {
+	0% { -moz-transform: rotateZ(0deg); }
+	20% { -moz-transform: rotateZ(10deg); -moz-animation-timing-function: ease-out; }
+	40% { -moz-transform: rotateZ(17deg); }
+	60% { -moz-transform: rotateZ(16deg); }
+	100% { -moz-transform: translateY(100%) rotateZ(17deg); }
+}
+@keyframes rotateFall {
+	0% { transform: rotateZ(0deg); }
+	20% { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+	40% { transform: rotateZ(17deg); }
+	60% { transform: rotateZ(16deg); }
+	100% { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* scale up */
+@keyframes scaleUp {
+	from 		{ opacity: 0.3; transform: scale(0.8); }
+}
+@-moz-keyframes scaleUp {
+	from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
+}
+@-webkit-keyframes scaleUp {
+	from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from 	{ transform:translateX(100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(100%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+	from 	{ transform:translateY(100%); }
+	to 		{ transform: translateY(0); }
+}
+@-moz-keyframes slideInUp {
+	from 	{ -moz-transform:translateY(100%); }
+	to 		{ -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInUp {
+	from 	{ -webkit-transform:translateY(100%); }
+	to 		{ -webkit-transform: translateY(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {
+	to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@-webkit-keyframes rotateOutNewspaper {
+	to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@-moz-keyframes rotateOutNewspaper {
+	to { -moz-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@keyframes rotateOutNewspaper {
+	to { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+
+   /* Tablet Landscape */
+   @media screen and (max-width: 1060px) {
+       #primary { width:67%; }
+       #secondary { width:30%; margin-left:3%;}
+   }
+   /* Tabled Portrait */
+   @media screen and (max-width: 768px) {
+       #primary { width:100%; }
+       #secondary { width:100%; margin:0; border:none; }
+   }
+
+   @media screen and (min-width:240px) and (max-width: 320px) {
+		 .navigation-top{
+			 margin-top:20px;
+			 width:150px;
+		 }
+		 .active{
+			 margin-left:2px;
+		 }
+     .blocktext{
+			 font-size:15px;
+		 }
+		 #description{
+			 margin-top:20px;
+			 margin-left:10%;
+			 margin-right:10%;
+		 }
+     }
+   @media screen and (min-width: 321px) and (max-width:480px) {
+		 .navigation-top{
+			 margin-top:20px;
+			 width:200px;
+		 }
+		 .active{
+			 margin-left:4px;
+		 }
+		 .blocktext{
+			font-size:15px;
+		}
+		#description{
+		 margin-top:80px;
+		 margin-left:10%;
+		 margin-right:10%;
+		}
+   }
+   @media screen and(min-width: 640px){
+		 body {font-size:1rem;}
+     /*.navigation-top{
+			 margin-top:30px;
+		 }*/
+  }
+   @media (min-width:960px) { body {font-size:1.2rem;} }
+   @media (min-width:1100px) { body {font-size:1.5rem;} }
