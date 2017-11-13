@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Weather</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+ <!-- <script src="https://code.jquery.com/jquery-1.11.4.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>   -->
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="api.css"/>
+
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <li><a href="#" class="city">Stockholm</a></li>
+    <li><a href="#" class="city">Malmö</a></li>
+    <li><a href="#" class="city">Göteborg</a></li>
+    <li><a href="#" class="city">Uppsala</a></li>
+    <li><a href="#" class="city">Kiruna</a></li>
+    <li><a href="#" class="city">Jönköping</a></li>
+  </div>
+<span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+ 
+    <h1>Weather in Sweden</h1>
+  	<div class="content">
+      <h1 id="current_temp"></h1>
+      <p id="current_summary"></p>
+      <p id="location">Current Location</p>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="api.js"></script>
+</body>
+</html>
