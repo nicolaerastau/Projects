@@ -3,10 +3,9 @@
 html         { overflow-y:hidden; }
 .page        {
   bottom:0;
-
   text-align:center;
   top:0;
-  width:100%;
+  max-width:100%;
   padding-bottom:10%;
   background-size:cover;
   background-position: center center;
