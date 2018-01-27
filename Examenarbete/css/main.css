@@ -1,0 +1,38 @@
+.well{
+  border-bottom: 2px solid #7c1c1d !important;
+ /* background-color: #fce9ba !important;*/
+   }
+ .well-image{
+
+    width:60px;
+    height:50px;
+   }
+ .modal-header {
+     background-color: #42a1f4;
+     color:white !important;
+     text-align: center;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+    }
+ .modal-body {
+  width:600px;
+    height:250px;
+  
+ }
+
+ .modal-content {
+     background-color: #f9f9f9;
+      overflow:hidden;
+      text-align: center;
+    }
+ .modal-footer{
+    background-color: #e6e6e6;
+ }   
+.details {
+      text-align: center; 
+      vertical-align: middle;
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+      font-size: 12px !important;
+      border-radius: 3px ;
+    }
