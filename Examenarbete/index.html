@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="corporate-ui" ng-app="Icon">   
+<head>
+  <title>Scania Icon Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <link href="https://static.scania.com/resources/images/compressed/logotypes/favicon.ico" rel="shortcut icon">
+ <!--Scania Bootstrap -->
+  <link href="https://static.scania.com/build/global/1.8.0/css/scania-bootstrap.css" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- <base href="/"></base> -->
+</head>
+
+<body class="bootstrap" style="margin-top:0px !important;" >
+
+  <div class="container portal-main-container padding-top"><!-- MAIN CONTAINER -->
+        <div class="row">
+            <div class="col-md-6">
+              <span class="scania-portal-logo"></span>
+              <div class="portal-heading">Scania Icon Creator</div>
+            </div>
+        </div> 
+
+    
+    <div class="content-panel" >
+      <div  ng-controller="listCtrl as list">
+       
+                <div class="row">
+                  <div class="col-sm-3" ng-repeat="icon in list.data">
+                      <div class="well">
+                        <div class="row"> 
+                              <img ng-src="{{icon.img}}" class="well-image">
+                               <button type="button" class="btn btn-default btn-space btn-sm details previous" data-toggle="modal" data-target="#icon-source" ng-click = "list.changeActiveIcon(icon)">Details</button>
+                               <button type="button" class="btn btn-default btn-space btn-sm next" data-toggle="modal" data-target="#icon-image" ng-click = "list.changeActiveIcon(icon)">Image</button>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="modal" id="icon-image">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                              <h2 style="color:white">{{list.activeIcon.name}}</h2>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          </div>
+                          <div class="modal-body">
+                            <img ng-src="{{list.activeIcon.imgAI}}" />
+                            <img ng-src="{{list.activeIcon.img}}" /> 
+                          </div>
+                          <div class="modal-footer">
+                              <form class="form-inline">
+                                <div class="form-group">Size
+                                    <select ng-model="selectSize" >  
+                                    <option selected>24px</option>
+                                     <option>48px</option>
+                                     <option>64px</option> 
+                                    </select>
+                                </div>
+                                    Color picker <input type="color" ng-model="list.favcolor">{{list.activeIcon.favcolor}}
+                                    <button type="button" class="btn btn-default btn-sm"   data-dismiss="modal">Close</button>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="modal" id="icon-source" > 
+                  <div class="modal-dialog" >
+                    <div class="modal-content" >
+                          <div class="modal-header">
+                              <h2 style="color:white">{{list.activeIcon.name}}</h2>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                           </div> 
+                          <div class="modal-body" >
+                            <div class="row">
+                               <img ng-src="{{list.activeIcon.img}}" />
+                           
+                            <br />
+                            This is where the Icon Details Goes
+                            <br />
+                            <p>{{list.activeIcon.details}}</p>
+                             <xmp ng-class="{hidden: !list.showCode}">{{list.activeIcon.code}}</xmp>
+                             <xmp ng-class="{hidden: !list.showCode_negative}">{{list.activeIcon.code_negative}}</xmp>
+                      
+                          </div>  
+                          </div>
+                          <div class="modal-footer">
+                              <form class="form-inline">
+                                <div class="form-group-sm">
+                                  <a  href="https://static.scania.com/ux-library/icons/" target="_blank">UX-Library-icons</a>
+                                </div><br>
+                               <br>
+                              </form>
+
+                            <button type="button" class="btn btn-default btn-sm" ng-click="list.showCode = !list.showCode; list.showCode_negative = false">Show svg code</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-click="list.showCode_negative = !list.showCode_negative; list.showCode = false">Show svg code-negative</button>
+                            <button type="button" class="btn btn-default btn-sm download" ><a target="_self" href="/Skrivbord/angular-json/" download="{{list.activeIcon.img}}">Download Illustrator file</a></button> 
+                            
+                            
+                            <button type="button" class="btn btn-default btn-sm"   data-dismiss="modal">Close</button>
+                         
+                          </div>
+                      </div>
+                    </div>
+                </div>
+        
+        </div>     
+    </div>
+    </div> 
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+  <script  src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/list-1.js"></script>
+</body>
+
+
+</html>
