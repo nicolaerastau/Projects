@@ -164,6 +164,7 @@ h2 {
       width: 300px;
       height: 300px;
       border: 3px solid #0000ff;
+      overflow-y: auto;
 }
 .project {
       margin-left: 25px;
