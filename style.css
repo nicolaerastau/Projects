@@ -1,8 +1,8 @@
 /* BASE STYLES
 ============================================================================= */
-html         { overflow-y:hidden; }
+html         { overflow-y:auto; }
 .page        {
-  
+  bottom:0;
   text-align:center;
   top:0;
   max-width:100%;
