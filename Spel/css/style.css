@@ -45,10 +45,16 @@ header {
  header h1:hover{
   background-color: #ff9900;
 }
-.active{
+.a{
 	color:#00004d;
 	font-size: 30px;
   display: inline-block;
   margin-left:20px;
-
+    text-decoration: none;
+}
+a:hover {
+	  display: inline-block;
+    color:#ff9900;
+    text-decoration: none;
+    text-shadow: 2px 2px #555;
 }
