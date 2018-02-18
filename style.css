@@ -53,9 +53,9 @@ ul.sidenav li a:hover {
         text-decoration: none;
         text-shadow: 2px 2px #555;
 }
-ul li{
+ul {
 	list-style-type:none;
-        display: inline;
+        display: block;
 }
 .active{
 	color:#00004d;
@@ -173,7 +173,7 @@ h2 {
       color:#96070e;
 }
 ul li a:hover {
-      display: inline;
+      display: inline-block;
       color:#cc0000;
       text-decoration: none;
       text-align: center;
