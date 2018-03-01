@@ -34,14 +34,14 @@ h1{
   font-size: 20px;
   display: inline-block;
   margin-top:10px;
-  margin-left:80px;
+  margin-left:150px;
   text-decoration: none;
 }
 a:hover {
     display: inline-block;
     color:#ff9900;
     text-decoration: none;
-    text-shadow: 2px 2px #555;
+    text-shadow: 1px 1px #555;
 }
 .sidenav {
     height: 100%;
