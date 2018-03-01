@@ -29,6 +29,19 @@ h1{
 	text-align: center;
 	color:red;
 }
+.a{
+  color:#00004d;
+  font-size: 20px;
+  display: inline-block;
+  margin-left:20px;
+  text-decoration: none;
+}
+a:hover {
+    display: inline-block;
+    color:#4286f4;
+    text-decoration: none;
+    text-shadow: 1px 1px #555;
+}
 .sidenav {
     height: 100%;
     width: 0;
