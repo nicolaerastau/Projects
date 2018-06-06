@@ -12,6 +12,6 @@ new Vue({
 new Vue({
   el:"#vue-app-nav",
   data: {
-    title:'What can I do today'
+    title:'Aside'
     }
 });
