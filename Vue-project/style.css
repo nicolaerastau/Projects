@@ -1,0 +1,113 @@
+html{overflow-y:auto;}
+body{
+  position:relative;
+  background-size:cover;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-image:url("https://i.imgur.com/JfJAN80.jpg");
+}
+h1 {
+
+  font-size:60px;
+  text-align:center;
+  color:#000066;
+  text-shadow: 2px 2px #95b7ed;
+  margin:0 0;
+}
+.subtitle {
+
+  text-align:center;
+  color:#ff9900;
+  text-shadow:2px 2px #000066;
+  margin-top:0;
+  padding:0;
+}
+.container > *{
+  /*padding:0.85em;*/
+
+  text-align:center;
+
+}
+
+header{
+  color:#ffffff;
+   background-color:#003d66;
+ 	 opacity:0.7;
+   border-radius:15px;
+}
+nav{
+  color:#ffffff;
+  font-size:30px;
+  background-color:#113e7c;
+  opacity:0.9;
+  border-radius:15px;
+}
+main{
+  font-size: 20px;
+  color:#ffffff;
+  background-color:#113e7c;
+  opacity:0.9;
+  border-radius:15px;
+}
+/* main:hover{
+  display: inline-block;
+  color:#ff9900;
+  text-decoration: none;
+  text-shadow: 1px 1px #555;
+  text-align:center;
+} */
+aside{
+  color:#ffffff;
+  background-color:#113e7c;
+  opacity:0.9;
+  border-radius:15px;
+}
+footer{
+  color:#ffffff;
+  background-color:#003d66;
+  opacity:0.9;
+  border-radius:15px;
+}
+ul li a {
+  vertical-align:middle;
+   align-items: center;
+}
+h3{
+  text-align: center;
+}
+.a{
+  color:#00004d;
+  font-size: 20px;
+  display: inline-block;
+  /* margin-top:10px; */
+  /* margin-left:250px; */
+  /* text-decoration: none; */
+
+}
+a:hover {
+    display: inline-block;
+    color:#ff9900;
+    text-decoration: none;
+    text-shadow: 1px 1px #555;
+    text-align:center;
+}
+
+.music{
+  text-align:center;
+  color:#5dbaf0;
+  text-shadow: 1px 1px #ffffff;
+  margin-right: auto;
+  margin-left: auto;
+}
+.b{
+  text-align:center;
+  margin-bottom:10px;
+  margin:0;
+  padding:0;
+}
+
+.nav{
+  text-align: center;
+  color:#ffc500;
+}
